@@ -16,11 +16,31 @@ pip install argument-analysis-mcp
 
 ### Add to Claude Code
 
+**From a pip install:**
+
 ```bash
 claude mcp add argument-analysis -- aa-mcp-server
 ```
 
-To pass environment variables:
+**From a local clone (development):**
+
+```bash
+git clone <repo>
+cd argument-analysis-mcp
+pip install -e ".[dev]"
+
+claude mcp add argument-analysis -- aa-mcp-server
+```
+
+The editable install wires `aa-mcp-server` to your local source, so code changes are reflected without reinstalling.
+
+Alternatively, run directly from the repo without installing the script:
+
+```bash
+claude mcp add argument-analysis -- python -m aa_mcp
+```
+
+To pass environment variables (either method):
 
 ```bash
 claude mcp add argument-analysis \
